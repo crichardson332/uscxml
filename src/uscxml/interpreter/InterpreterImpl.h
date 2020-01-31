@@ -155,6 +155,9 @@ public:
 	virtual bool isInState(const std::string& stateId) {
 		return _microStepper.isInState(stateId);
 	}
+    virtual std::list<std::string> getActiveStates() {
+		return _microStepper.getActiveStates();
+	}
 	virtual XERCESC_NS::DOMDocument* getDocument() const {
 		return _document;
 	}

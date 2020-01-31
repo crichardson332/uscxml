@@ -50,6 +50,7 @@ public:
 	virtual InterpreterState step(size_t blockMs);
 	virtual void reset();
 	virtual bool isInState(const std::string& stateId);
+    virtual std::list<std::string> getActiveStates();
 
 	std::list<XERCESC_NS::DOMElement*> getConfiguration();
 

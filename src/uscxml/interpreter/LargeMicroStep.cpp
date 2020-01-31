@@ -198,6 +198,19 @@ bool LargeMicroStep::isInState(const std::string& stateId) {
 	return false;
 }
 
+std::list<std::string> LargeMicroStep::getActiveStates() {
+#ifdef USCXML_VERBOSE
+	printStateNames(_configuration);
+#endif
+    std::list<std::string> states;
+	for (auto state : _configuration) {
+        if (HAS_ATTR(state->element, kXMLCharId)) {
+            states.push_back(ATTR(state->element, kXMLCharId));
+        }
+    }
+    return states;
+}
+
 std::list<DOMElement*> LargeMicroStep::getHistoryCompletion(const DOMElement* history) {
 	std::set<std::string> elements;
 	elements.insert(_xmlPrefix.str() + "history");

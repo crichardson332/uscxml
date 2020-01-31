@@ -83,6 +83,7 @@ public:
 	virtual InterpreterState step(size_t blockMs) = 0;
 	virtual void reset() = 0; ///< Reset state machine
 	virtual bool isInState(const std::string& stateId) = 0;
+    virtual std::list<std::string> getActiveStates() = 0;
 	virtual std::list<XERCESC_NS::DOMElement*> getConfiguration() = 0;
 
 	virtual void init(XERCESC_NS::DOMElement* scxml) = 0;

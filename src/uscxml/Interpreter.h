@@ -183,6 +183,12 @@ public:
 	bool isInState(const std::string& stateId);
 
 	/**
+	 * Get a list of the current active states of the state machine.
+	 * @return String id of current active state.
+	 */
+    std::list<std::string> getActiveStates();
+
+	/**
 	 * The current state of the interpreter, not to be confused with its configuration.
 	 * @return The current state of the interpreter object.
 	 */

@@ -231,6 +231,10 @@ bool Interpreter::isInState(const std::string& stateId) {
 	return _impl->isInState(stateId);
 }
 
+std::list<std::string> Interpreter::getActiveStates() {
+	return _impl->getActiveStates();
+}
+
 InterpreterState Interpreter::getState() {
 	return _impl->getState();
 }

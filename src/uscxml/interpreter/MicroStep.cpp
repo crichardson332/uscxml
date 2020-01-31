@@ -32,6 +32,10 @@ bool MicroStep::isInState(const std::string& stateId) {
 	return _impl->isInState(stateId);
 }
 
+std::list<std::string> MicroStep::getActiveStates() {
+	return _impl->getActiveStates();
+}
+
 std::list<XERCESC_NS::DOMElement*> MicroStep::getConfiguration() {
 	return _impl->getConfiguration();
 }

@@ -61,6 +61,7 @@ public:
 	virtual InterpreterState step(size_t blockMs);
 	virtual void reset();
 	virtual bool isInState(const std::string& stateId);
+    virtual std::list<std::string> getActiveStates();
 	virtual std::list<XERCESC_NS::DOMElement*> getConfiguration();
 	void markAsCancelled();
 
@@ -170,4 +171,3 @@ private:
 }
 
 #endif /* end of include guard: FASTMICROSTEP_H_065FE1F7 */
-

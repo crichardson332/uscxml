@@ -1344,6 +1344,19 @@ bool FastMicroStep::isInState(const std::string& stateId) {
 	return _configuration[_stateIds[stateId]];
 }
 
+std::list<std::string> FastMicroStep::getActiveStates() {
+#ifdef USCXML_VERBOSE
+	printStateNames(_configuration);
+#endif
+    std::list<std::string> states;
+    for (auto&& st : _stateIds) {
+        if (_configuration[st.second]) {
+            states.push_back(st.first);
+        }
+    }
+    return states;
+}
+
 std::list<XERCESC_NS::DOMElement*> FastMicroStep::getConfiguration() {
 	std::list<XERCESC_NS::DOMElement*> config;
 	size_t i = _configuration.find_first();
